@@ -1,0 +1,84 @@
+﻿<html>
+    <head>
+        <title>Ramen - Noodle Generator</title>
+        <link rel="stylesheet" href="./styles/main.css">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta name="theme-color" content="#00ffe5"/>
+            <meta property="og:title" content="Ramen - Noodle Generator"/>
+            <meta property="og:description" content="A noodle generator.">
+            <meta property="og:type" content="website">
+            <meta name="og:image" itemprop="image" content="./images/Ramen.png">
+        
+        <link rel="icon" href="./images/Ramen.png">
+    </head>
+    <body>
+        <center>
+            <div class="container">
+                <!-- Title -->
+                    <h1><br>Ramen - Noodle Generator</h1>
+                    <h3>Click Generate for a random noodle image.</h3><br>
+                
+
+                <!-- Generate Button -->
+                <button onclick="generate()">Generate</button>
+                <br><br><br>
+
+                <!-- Image Generated -->
+                <div id="img">
+                    <img src="./images/Notice.png" width="360" height="360">
+                </div>
+
+                <!-- Actually funny text -->
+                <div class="bottom">
+                    <h3 id="funnyText"></h3>
+                    <h4>Encountered bugs? Report them here.</h4>
+                </div>
+            </div>
+        </center>
+    </body>
+    <script>
+        function generate(){
+            // contains all links to images
+            var links = [
+                'https://rb.gy/ljlexx',
+                'https://rb.gy/rlt20x',
+                'https://rb.gy/iciexg',
+                'https://rb.gy/ssiytw',
+                'https://rb.gy/ismida',
+                'https://rb.gy/n9xpj3',
+                'https://rb.gy/s3jvda',
+                'https://rb.gy/hpxuf6',
+                'https://rb.gy/g1uls8',
+                'https://rb.gy/0c91wb',
+                'https://rb.gy/qeoqub',
+                'https://rb.gy/z3ng5k',
+                'https://rb.gy/4exdk3',
+            ];
+            var randomNum = Math.floor(Math.random() * (links.length));
+
+            var image = links[randomNum]
+            document.getElementById('img').innerHTML = "<img title=\"Why even hover over this?\" width=\"360\" height=\"360\" src=\"" + image + "\"></img>";
+        }
+
+        // funny haha text
+        var funnyText = [
+            'Does this "Rey" guy ever run out of useless ideas?',
+            'SLUUURRRPPP!',
+            'Eat noodles, 𝓼𝓸𝓯𝓽𝓵𝔂.',
+            'Hit Generate, NOW.',
+            'Powered by Noodles',
+            'More images soon',
+            'Protip: Refresh this page for more messages here!',
+            'Noodles run fast',
+            'Destroy the child',
+            'We ate them',
+            'Now with extra sauce!',
+            'Also try RNG Elemental!',
+            'I don\'t eat RAM'
+        ]
+        var randomNum2 = Math.floor(Math.random() * (funnyText.length));
+
+        document.getElementById('funnyText').innerHTML = funnyText[randomNum2];
+    </script>
+</html>
